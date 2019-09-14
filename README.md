@@ -3,4 +3,4 @@
 
 Teaser
 ---------
->[![Video Label](http://img.youtube.com/vi/ZCVJAn3Nn4U/0.jpg)](https://youtu.be/ZCVJAn3Nn4U?t=0s) <- 클릭 :)
+>[![Video Label](http://img.youtube.com/vi/ZCVJAn3Nn4U/0.jpg)](https://youtu.be/ZCVJAn3Nn4U?t=0s) <- 클릭하시면 영상을 보실 수 있습니다. :)

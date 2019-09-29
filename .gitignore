@@ -1,3 +1,13 @@
+## Wonsy Custom
+
+# Server
+Server/MainServer/.vs/
+Server/MainServer/x64/
+Server/MainServer/MainServer/x64/
+
+###############################
+
+
 # Visual Studio 2015 user specific files
 .vs/
 

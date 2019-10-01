@@ -2,8 +2,12 @@
 
 // C++
 #include <iostream>
-#include <cwchar>
 #include <string>
+
+// Ctype
+#include <cwchar>
+#include <cassert>
+#include <cstddef>
 
 // C++11 
 #include <mutex>
@@ -14,6 +18,9 @@
 
 // C++17
 #include <shared_mutex>
+
+// C++20
+#include <concepts>
 
 // STL
 #include <unordered_set>
@@ -36,5 +43,11 @@
 #define		_NODISCARD		[[nodiscard]]
 
 // Using Namespace
+using namespace std;
 using namespace std::chrono;
 using namespace concurrency;
+
+//---------
+#include "../../Define.hh"
+#include "Concepts.hh"
+//---------

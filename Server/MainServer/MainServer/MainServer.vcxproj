@@ -89,6 +89,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <AdditionalIncludeDirectories>D:\vcpkg-master\installed\x64-windows-static\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,11 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Define.hh" />
+    <ClInclude Include="Concepts.hh" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="MappedMemoryPool.hpp" />
+    <ClInclude Include="MappedMemoryUnit.h" />
+    <ClInclude Include="SendManager.h" />
+    <ClInclude Include="MappedMemoryPool.h" />
+    <ClInclude Include="Session.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MappedMemoryUnit.cpp" />
+    <ClCompile Include="SendManager.cpp" />
+    <ClCompile Include="MappedMemoryPool.cpp" />
+    <ClCompile Include="Session.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>

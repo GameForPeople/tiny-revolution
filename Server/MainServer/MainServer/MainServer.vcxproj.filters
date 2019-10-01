@@ -5,27 +5,72 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Main">
-      <UniqueIdentifier>{15eb220e-c458-47e7-852c-4cf79235e195}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Define">
       <UniqueIdentifier>{948ec664-f7eb-4d03-b344-5183804b4359}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="default">
+      <UniqueIdentifier>{15eb220e-c458-47e7-852c-4cf79235e195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{db87681b-9979-4699-9fc9-882eeabba2a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers">
+      <UniqueIdentifier>{f19fd349-a79d-431a-a9b8-4c903ae320c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers\SendManager">
+      <UniqueIdentifier>{ab3575d8-d012-4527-a2e2-5528d5ed7969}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers\MappedMemoryPool">
+      <UniqueIdentifier>{01a88a6e-20cf-4064-8f42-528838ed09bd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
-      <Filter>Main</Filter>
+      <Filter>default</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
+      <Filter>Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Session.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Define.hh">
+      <Filter>Define</Filter>
+    </ClInclude>
+    <ClInclude Include="SendManager.h">
+      <Filter>Managers\SendManager</Filter>
+    </ClInclude>
+    <ClInclude Include="MappedMemoryUnit.h">
+      <Filter>Managers\MappedMemoryPool</Filter>
+    </ClInclude>
+    <ClInclude Include="MappedMemoryPool.hpp">
+      <Filter>Managers\MappedMemoryPool</Filter>
+    </ClInclude>
+    <ClInclude Include="MappedMemoryPool.h">
+      <Filter>Managers\MappedMemoryPool</Filter>
+    </ClInclude>
+    <ClInclude Include="Concepts.hh">
       <Filter>Define</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Main</Filter>
+      <Filter>default</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Define</Filter>
+    </ClCompile>
+    <ClCompile Include="Session.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="SendManager.cpp">
+      <Filter>Managers\SendManager</Filter>
+    </ClCompile>
+    <ClCompile Include="MappedMemoryUnit.cpp">
+      <Filter>Managers\MappedMemoryPool</Filter>
+    </ClCompile>
+    <ClCompile Include="MappedMemoryPool.cpp">
+      <Filter>Managers\MappedMemoryPool</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

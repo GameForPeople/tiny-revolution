@@ -48,6 +48,7 @@ using namespace std::chrono;
 using namespace concurrency;
 
 //---------
-#include "../../Define.hh"
+#define TR_SERVER
+#include "../../../Define.hh"
 #include "Concepts.hh"
 //---------

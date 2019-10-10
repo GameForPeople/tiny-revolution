@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Define.hh" />
+    <ClInclude Include="..\..\..\Define.hh" />
     <ClInclude Include="Concepts.hh" />
     <ClInclude Include="main.h" />
     <ClInclude Include="MappedMemoryPool.hpp" />

@@ -9,8 +9,10 @@ namespace USING
 
 namespace NETWORK
 {
+	
 	constexpr unsigned short MAIN_SERVER_PORT = 9000;
-
+	
+	
 	constexpr unsigned int RECV_BUFFER_MAX_SIZE = 128; //std::numeric_limits<unsigned char>::max();
 }
 
@@ -193,4 +195,104 @@ namespace ATOMIC_UTIL
 	{
 		return atomic_compare_exchange_strong(reinterpret_cast<volatile std::atomic<TYPE>*>(addr), &oldValue, newValue);
 	};
+}
+
+namespace TIME_UTIL
+{
+	inline const std::string GetCurrentDateTime()
+	{
+		time_t     now = time(0); //현재 시간을 time_t 타입으로 저장
+		struct tm  tstruct;
+		char       buf[80];
+		localtime_s(&tstruct, &now);
+		strftime(buf, sizeof(buf), "%Y-%m-%d.%X", &tstruct); // YYYY-MM-DD.HH:mm:ss 형태의 스트링
+
+		return buf;
+	}
+}
+
+namespace UNICODE_UTIL
+{
+	void SetLocaleForKorean()
+	{
+		_wsetlocale(LC_ALL, L"Korean");
+		auto oldLocale = std::wcout.imbue(std::locale("korean"));
+	}
+
+#ifdef _WINDOWS_
+	_NODISCARD inline std::string WStringToString(const std::wstring& InWideString)
+	{
+		const int sizeBuffer = WideCharToMultiByte(CP_ACP, 0, &InWideString[0], -1, NULL, 0, NULL, NULL);
+		std::string retString(sizeBuffer, 0);
+		WideCharToMultiByte(CP_ACP, 0, &InWideString[0], -1, &retString[0], sizeBuffer, NULL, NULL);
+
+		// FixError ==
+		retString.pop_back(); //(retString.end(), retString.end());
+		//retString.insert(retString.end(), '\0');
+
+		return retString;
+	}
+
+	_NODISCARD inline std::wstring StringToWString(const std::string& InString)
+	{
+		const int sizeBuffer = MultiByteToWideChar(CP_ACP, 0, &InString[0], -1, NULL, 0);
+		std::wstring retString(sizeBuffer, 0);
+		MultiByteToWideChar(CP_ACP, 0, &InString[0], -1, &retString[0], sizeBuffer);
+		return retString;
+	}
+#else
+	_NODISCARD inline std::string WStringToString(const std::wstring& InWideString)
+	{
+		char chr[100];
+		wcstombs(chr, InWideString.c_str(), InWideString.size());
+
+		return chr;
+	}
+
+	_NODISCARD inline std::wstring StringToWString(const std::string& InString)
+	{
+		wchar_t wcsarr[100];
+		mbstowcs(wcsarr, InString.c_str(), InString.size());
+
+		return wcsarr;
+	}
+#endif
+}
+
+namespace ERROR_UTIL
+{
+	//_NORETURN inline void ERROR_QUIT(const WCHAR* msg)
+	//{
+	//	LPVOID lpMsgBuf;
+	//	FormatMessage(
+	//		FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM,
+	//		NULL,
+	//		WSAGetLastError(),
+	//		MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+	//		(LPTSTR)&lpMsgBuf,
+	//		0,
+	//		NULL
+	//	);
+
+	//	// LogManager::GetInstance()->AddLog(LOG_TYPE::ERROR_LOG, (LPTSTR)lpMsgBuf);
+	//	MessageBox(NULL, (LPTSTR)lpMsgBuf, msg, MB_ICONERROR);
+	//	LocalFree(lpMsgBuf);
+	//	exit(1);
+	//};
+	//
+
+	//inline void ERROR_DISPLAY(const WCHAR* msg)
+	//{
+	//	LPVOID lpMsgBuf;
+	//	FormatMessage(
+	//		FORMAT_MESSAGE_ALLOCATE_BUFFER |
+	//		FORMAT_MESSAGE_FROM_SYSTEM,
+	//		NULL, WSAGetLastError(),
+	//		MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+	//		(LPTSTR)&lpMsgBuf, 0, NULL);
+
+	//	LogManager::GetInstance()->AddLog(LOG_TYPE::WARNING_LOG, (WCHAR*)lpMsgBuf);
+	//	wprintf(L"[%s] %s", msg, (WCHAR*)lpMsgBuf);
+	//	LocalFree(lpMsgBuf);
+	//}
 }

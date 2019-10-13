@@ -1,10 +1,13 @@
 #pragma once
 
-struct MappedMemoryUnit
+namespace WonSY_SERVER
 {
-	std::array<_DataType, NETWORK::RECV_BUFFER_MAX_SIZE> buffer;
-	_MemoryPoolIndex memoryPoolIndex;
+	struct MappedMemoryUnit
+	{
+		std::array<_DataType, NETWORK::RECV_BUFFER_MAX_SIZE> buffer;
+		_MemoryPoolIndex memoryPoolIndex;
 
-public:
-	MappedMemoryUnit(_MemoryPoolIndex memoryPoolIndex) noexcept;
-};
+	public:
+		MappedMemoryUnit(_MemoryPoolIndex memoryPoolIndex) noexcept;
+	};
+}

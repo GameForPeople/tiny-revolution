@@ -7,30 +7,31 @@ class Session;
 /*
 	!0. 기본 싱글턴.. 정적 객체 사용하며 생성자 비호출되어야함.
 */
-class SendManager /* Singleton */
+namespace WonSY_SERVER
 {
-	enum class SINGLETON_INSTANCE
+	class SendManager /* Singleton */
 	{
-		DEFAULT = 0
+		enum class SINGLETON_INSTANCE { DEFAULT = 0 };
+	
+	public:
+		SendManager() = delete;
+		SendManager(SINGLETON_INSTANCE);
+		SendManager(const SendManager& other) = delete;
+		SendManager& operator=(const SendManager&) = delete;
+
+		inline static SendManager& GetInstance() noexcept { return SendManager::instance; }
+	
+	public:
+		void SendData(_DataType* data, Session* session) noexcept;
+		void PushMemory(MappedMemoryUnit*) noexcept;
+	
+	private:
+		_NODISCARD MappedMemoryUnit* PopMemoryUnit(_MemoryPoolIndex) noexcept;
+	
+	private:
+		/*inline*/ static SendManager instance;
+		inline static atomic<bool> instanceFlag{false};
+	
+		unique_ptr<MappedMemoryPool<MappedMemoryUnit>> sendMemoryPool;
 	};
-
-public:
-	SendManager() = delete;
-	SendManager(SINGLETON_INSTANCE);
-	SendManager(const SendManager& other) = delete;
-
-	static SendManager& GetInstance() noexcept;
-
-public:
-	void SendData(_DataType* data, Session* session) noexcept;
-	void PushMemory(MappedMemoryUnit*) noexcept;
-
-private:
-	_NODISCARD MappedMemoryUnit* PopMemoryUnit(_MemoryPoolIndex) noexcept;
-
-private:
-	/*inline*/ static SendManager instance;
-	inline static atomic<bool> onceFlag{false};
-
-	unique_ptr<MappedMemoryPool<MappedMemoryUnit>> sendMemoryPool;
-};
+}

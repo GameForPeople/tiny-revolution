@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Define">
       <UniqueIdentifier>{948ec664-f7eb-4d03-b344-5183804b4359}</UniqueIdentifier>
     </Filter>
@@ -22,6 +18,12 @@
     </Filter>
     <Filter Include="Managers\MappedMemoryPool">
       <UniqueIdentifier>{01a88a6e-20cf-4064-8f42-528838ed09bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers\LogManager">
+      <UniqueIdentifier>{8e75135b-943c-4fb4-89f4-e5598e3749ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library">
+      <UniqueIdentifier>{0a5935d5-a8ce-4940-abac-726a23150d24}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +54,9 @@
     <ClInclude Include="..\..\..\Define.hh">
       <Filter>Define</Filter>
     </ClInclude>
+    <ClInclude Include="LogManager.h">
+      <Filter>Managers\LogManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -71,6 +76,9 @@
     </ClCompile>
     <ClCompile Include="MappedMemoryPool.cpp">
       <Filter>Managers\MappedMemoryPool</Filter>
+    </ClCompile>
+    <ClCompile Include="LogManager.cpp">
+      <Filter>Managers\LogManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -2,8 +2,11 @@
 
 #include "MappedMemoryUnit.h"
 
-MappedMemoryUnit::MappedMemoryUnit(_MemoryPoolIndex memoryPoolIndex) noexcept
-	: buffer()
-	, memoryPoolIndex(memoryPoolIndex)
+namespace WonSY_SERVER 
 {
+	MappedMemoryUnit::MappedMemoryUnit(_MemoryPoolIndex memoryPoolIndex) noexcept
+		: buffer()
+		, memoryPoolIndex(memoryPoolIndex)
+	{
+	}
 }

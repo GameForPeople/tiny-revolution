@@ -1,6 +1,6 @@
 #pragma once
 
-namespace WonSY_SERVER
+namespace WonSY
 {
 	struct MappedMemoryUnit
 	{

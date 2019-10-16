@@ -6,7 +6,7 @@
 
 #include "SendManager.h"
 
-namespace WonSY_SERVER
+namespace WonSY
 {
 	SendManager SendManager::instance(SINGLETON_INSTANCE::DEFAULT);
 

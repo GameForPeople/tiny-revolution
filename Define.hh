@@ -3,15 +3,19 @@
 namespace USING
 {
 	using _DataType = char;
-	using _KeyType = unsigned short;
+
+	using _KeyType = unsigned int;
+	using _clientKeyType = unsigned short;
+	
 	using _MemoryPoolIndex = const unsigned int;
+
+	using _TimeType = unsigned long long;
+
 }using namespace USING;
 
-namespace NETWORK
+namespace DEFINE
 {
-	
 	constexpr unsigned short MAIN_SERVER_PORT = 9000;
-	
 	
 	constexpr unsigned int RECV_BUFFER_MAX_SIZE = 128; //std::numeric_limits<unsigned char>::max();
 }

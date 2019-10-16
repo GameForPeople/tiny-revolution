@@ -1,4 +1,4 @@
-namespace WonSY_SERVER
+namespace WonSY
 {
 	template <typename _MappedMemoryType>
 	MappedMemoryPool<_MappedMemoryType>::MappedMemoryPool(CONSTRUCTOR_POSITION, MEMORY_POOL_MAPPED_SIZE memoryPoolSize, MEMORY_UNIT_COUNT memoryUnitCount)

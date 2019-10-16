@@ -2,23 +2,26 @@
 
 struct MappedMemoryUnit;
 
-class Session
+namespace WonSY 
 {
-public:
-	Session(boost::asio::io_context& io_service) noexcept;
-	void PostReceive();
-	
-	boost::asio::ip::tcp::socket& GetSocket();
-	_MemoryPoolIndex GetMemoryPoolIndex();
+	class Session
+	{
+	public:
+		Session(boost::asio::io_context& io_service) noexcept;
+		void PostReceive();
 
-	void ProcessWrite(const boost::system::error_code& /*error*/, size_t /*bytes_transferred*/, MappedMemoryUnit*);
+		boost::asio::ip::tcp::socket& GetSocket();
+		_MemoryPoolIndex GetMemoryPoolIndex();
 
-private:
-	void ProcessReceive(const boost::system::error_code& error, size_t bytes_transferred);
+		void ProcessWrite(const boost::system::error_code& /*error*/, size_t /*bytes_transferred*/, MappedMemoryUnit*);
 
-	boost::asio::ip::tcp::socket socket;
-	std::array<_DataType, NETWORK::RECV_BUFFER_MAX_SIZE> receiveBuffer;
+	private:
+		void ProcessReceive(const boost::system::error_code& error, size_t bytes_transferred);
 
-	_MemoryPoolIndex memoryPoolIndex;
-	//std::string writeMessage;
-};
+		boost::asio::ip::tcp::socket socket;
+		std::array<_DataType, DEFINE::RECV_BUFFER_MAX_SIZE> receiveBuffer;
+
+		_MemoryPoolIndex memoryPoolIndex;
+		//std::string writeMessage;
+	};
+}

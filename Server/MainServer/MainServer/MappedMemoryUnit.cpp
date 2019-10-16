@@ -2,7 +2,7 @@
 
 #include "MappedMemoryUnit.h"
 
-namespace WonSY_SERVER 
+namespace WonSY 
 {
 	MappedMemoryUnit::MappedMemoryUnit(_MemoryPoolIndex memoryPoolIndex) noexcept
 		: buffer()

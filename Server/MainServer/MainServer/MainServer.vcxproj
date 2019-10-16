@@ -132,25 +132,33 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\Define.hh" />
     <ClInclude Include="Concepts.hh" />
+    <ClInclude Include="ConnectManager.h" />
     <ClInclude Include="LogManager.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="MappedMemoryPool.hpp" />
     <ClInclude Include="MappedMemoryUnit.h" />
     <ClInclude Include="SendManager.h" />
     <ClInclude Include="MappedMemoryPool.h" />
+    <ClInclude Include="Server.h" />
     <ClInclude Include="Session.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TimerManager.h" />
+    <ClInclude Include="TimerUnit.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConnectManager.cpp" />
     <ClCompile Include="LogManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MappedMemoryUnit.cpp" />
     <ClCompile Include="SendManager.cpp" />
     <ClCompile Include="MappedMemoryPool.cpp" />
+    <ClCompile Include="Server.cpp" />
     <ClCompile Include="Session.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TimerManager.cpp" />
+    <ClCompile Include="TimerUnit.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

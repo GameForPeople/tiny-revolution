@@ -1,6 +1,6 @@
 #pragma once
 
-namespace WonSY_SERVER 
+namespace WonSY 
 {
 	template <typename _MappedMemoryType>
 	class MappedMemoryPool

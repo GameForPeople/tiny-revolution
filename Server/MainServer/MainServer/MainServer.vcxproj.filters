@@ -16,14 +16,23 @@
     <Filter Include="Managers\SendManager">
       <UniqueIdentifier>{ab3575d8-d012-4527-a2e2-5528d5ed7969}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Managers\MappedMemoryPool">
-      <UniqueIdentifier>{01a88a6e-20cf-4064-8f42-528838ed09bd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Managers\LogManager">
       <UniqueIdentifier>{8e75135b-943c-4fb4-89f4-e5598e3749ae}</UniqueIdentifier>
     </Filter>
     <Filter Include="Library">
       <UniqueIdentifier>{0a5935d5-a8ce-4940-abac-726a23150d24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers\ConnectManager">
+      <UniqueIdentifier>{b3f1653b-870b-4eac-a7ee-ce370cf05a31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers\TimerManager">
+      <UniqueIdentifier>{13c052b0-2166-4854-9788-6d7284d15717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\MappedMemoryPool">
+      <UniqueIdentifier>{01a88a6e-20cf-4064-8f42-528838ed09bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers\TimerManager\TimerUnit">
+      <UniqueIdentifier>{f7083563-209b-4f75-962b-eb8e9d15d7f6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -40,13 +49,13 @@
       <Filter>Managers\SendManager</Filter>
     </ClInclude>
     <ClInclude Include="MappedMemoryUnit.h">
-      <Filter>Managers\MappedMemoryPool</Filter>
+      <Filter>Library\MappedMemoryPool</Filter>
     </ClInclude>
     <ClInclude Include="MappedMemoryPool.hpp">
-      <Filter>Managers\MappedMemoryPool</Filter>
+      <Filter>Library\MappedMemoryPool</Filter>
     </ClInclude>
     <ClInclude Include="MappedMemoryPool.h">
-      <Filter>Managers\MappedMemoryPool</Filter>
+      <Filter>Library\MappedMemoryPool</Filter>
     </ClInclude>
     <ClInclude Include="Concepts.hh">
       <Filter>Define</Filter>
@@ -56,6 +65,18 @@
     </ClInclude>
     <ClInclude Include="LogManager.h">
       <Filter>Managers\LogManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Server.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="ConnectManager.h">
+      <Filter>Managers\ConnectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerManager.h">
+      <Filter>Managers\TimerManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerUnit.h">
+      <Filter>Managers\TimerManager\TimerUnit</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -72,13 +93,25 @@
       <Filter>Managers\SendManager</Filter>
     </ClCompile>
     <ClCompile Include="MappedMemoryUnit.cpp">
-      <Filter>Managers\MappedMemoryPool</Filter>
+      <Filter>Library\MappedMemoryPool</Filter>
     </ClCompile>
     <ClCompile Include="MappedMemoryPool.cpp">
-      <Filter>Managers\MappedMemoryPool</Filter>
+      <Filter>Library\MappedMemoryPool</Filter>
     </ClCompile>
     <ClCompile Include="LogManager.cpp">
       <Filter>Managers\LogManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="ConnectManager.cpp">
+      <Filter>Managers\ConnectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TimerManager.cpp">
+      <Filter>Managers\TimerManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TimerUnit.cpp">
+      <Filter>Managers\TimerManager\TimerUnit</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

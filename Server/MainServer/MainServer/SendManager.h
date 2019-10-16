@@ -7,7 +7,7 @@ class Session;
 /*
 	!0. 기본 싱글턴.. 정적 객체 사용하며 생성자 비호출되어야함.
 */
-namespace WonSY_SERVER
+namespace WonSY
 {
 	class SendManager /* Singleton */
 	{
@@ -30,7 +30,7 @@ namespace WonSY_SERVER
 	
 	private:
 		/*inline*/ static SendManager instance;
-		inline static atomic<bool> instanceFlag{false};
+		inline static std::atomic<bool> instanceFlag{false};
 	
 		unique_ptr<MappedMemoryPool<MappedMemoryUnit>> sendMemoryPool;
 	};

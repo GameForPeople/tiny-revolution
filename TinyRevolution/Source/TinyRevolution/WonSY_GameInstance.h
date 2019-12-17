@@ -11,17 +11,17 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
+#include "../../Define.hh"
+
 #include "WonSY_GameInstance.generated.h"
 /**
  * 
  */
+
 UCLASS()
 class TINYREVOLUTION_API UWonSY_GameInstance : public UGameInstance
 {
 	GENERATED_BODY()
-
-	const FString PUBLIC_SERVER_IP = "13.125.73.63";
-	const FString LOCAL_HOST_IP = "127.0.0.1";
 
 public:
 	UFUNCTION(BlueprintCallable, Category = "WONSY_NETWORK")
@@ -36,9 +36,10 @@ public:
 
 private:
 	FSocket* socket;
+
 	//TArray<uint8> recvBuffer;
-	uint8 recvBuffer[512];
-	uint8 loadedBuffer[512];
+	uint8 recvBuffer[DEFINE::RECV_BUFFER_MAX_SIZE];
+	uint8 loadedBuffer[DEFINE::PACKET_MAX_SIZE];
 	uint8 loadedSize = 0;
 
 	std::thread networkThread;

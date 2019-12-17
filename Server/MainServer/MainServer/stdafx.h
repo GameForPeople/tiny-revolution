@@ -56,8 +56,6 @@ using namespace concurrency;
 using namespace std::literals;
 using boost::asio::ip::tcp;
 
-using namespace WonSY;
-
 //---------
 #define FOR_SERVER
 #include "../../../Define.hh"

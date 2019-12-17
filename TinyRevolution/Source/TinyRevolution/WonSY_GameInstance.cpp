@@ -15,7 +15,7 @@ void UWonSY_GameInstance::StartNetwork(bool isUsePublicIP)
 
 	FString ipString = [&, isUsePublicIP]() noexcept
 	{ 
-		return isUsePublicIP ? PUBLIC_SERVER_IP : LOCAL_HOST_IP;
+		return isUsePublicIP ? DEFINE::PUBLIC_SERVER_IP : DEFINE::LOCAL_HOST_IP;
 	}();
 
 	TArray<uint8> ipCont;
@@ -36,7 +36,7 @@ void UWonSY_GameInstance::StartNetwork(bool isUsePublicIP)
 	}
 	
 	TSharedRef<FInternetAddr> addr = ISocketSubsystem::Get(PLATFORM_SOCKETSUBSYSTEM)->CreateInternetAddr();
-	addr->SetPort(9000);
+	addr->SetPort(DEFINE::MAIN_SERVER_PORT);
 	addr->SetRawIp(ipCont);
 	
 	if (socket->Connect(*addr))
@@ -138,14 +138,13 @@ void UWonSY_GameInstance::NetworkFunction()
 
 void UWonSY_GameInstance::ProcessPacket()
 {
-	switch(loadedBuffer[1])
+	using namespace PACKET::PACKET_TYPE;
+	switch(static_cast<MAIN_TO_CLIENT>(loadedBuffer[1]))
 	{
-	case 1:
-	{
-
-	}
-	break;
+	case MAIN_TO_CLIENT::MOVE:
+		break;
 	default:
+		UE_LOG(LogTemp, Display, TEXT("정의되지 않은 패킷을 받았습니다."));
 		break;
 	}
 }
